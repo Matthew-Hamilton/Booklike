@@ -1317,6 +1317,8 @@ MonoBehaviour:
   folderPath: 
   floorTile: {fileID: 7437864665995726032, guid: b57bed28bd7c4bf4ea6222b34da7ad2a, type: 3}
   dropDown: {fileID: 2041246049}
+  GroundColour: {r: 0.4528302, g: 0.19042093, b: 0, a: 1}
+  Wall: {r: 0.3679245, g: 0.3679245, b: 0.3679245, a: 1}
 --- !u!1 &366183641
 GameObject:
   m_ObjectHideFlags: 0
