@@ -52,10 +52,17 @@ public class RoomLink : MonoBehaviour
 
     void RandomiseRoom()
     {
-        string[] files;
+        List<string> files = new List<string>();
 
-        files = Directory.GetFiles(Application.persistentDataPath + "/" + roomType);
-        randomPick = Random.Range(0, files.Length);
+        foreach(string file in Directory.GetFiles("Assets/Rooms" + "/" + roomType))
+        {
+
+            if(!file.Contains(".meta"))
+            {
+                files.Add(file);
+            }
+        }
+        randomPick = Random.Range(0, files.Count);
         roomFile = files[randomPick];
         Debug.Log(roomFile);
     }
@@ -63,7 +70,7 @@ public class RoomLink : MonoBehaviour
     void RandomiseRoomType(string disqualifiedRoom1 = " ", string disqualifiedRoom2 = " ", string disqualifiedRoom3 = " ", string disqualifiedRoom4 = " ", string disqualifiedRoom5 = " ", string disqualifiedRoom6 = " ", string disqualifiedRoom7 = " ", string disqualifiedRoom8 = " ", string disqualifiedRoom9 = " ", string disqualifiedRoom10 = " ", string disqualifiedRoom11 = " ")
     {
         List<string> folders =  new List<string>();
-        DirectoryInfo dir = new DirectoryInfo(Application.persistentDataPath);
+        DirectoryInfo dir = new DirectoryInfo("Assets/Rooms");
         DirectoryInfo[] info = dir.GetDirectories();
         foreach (DirectoryInfo f in info)
         {
