@@ -33,7 +33,7 @@ public class RoomSystem : MonoBehaviour
     {
         numRooms = 0;
         maxNumRooms = levelNumber + difficulty;
-        newRoom = new RoomLink("CrossRoads");
+        newRoom = new RoomLink("SpawnRoom");
         currentRoom = newRoom;
         GenerateRooms(currentRoom);
         roomLoader.LoadMap(currentRoom.roomFile);
@@ -48,6 +48,7 @@ public class RoomSystem : MonoBehaviour
         {
             switch (prevRoom.roomType)
             {
+                case "SpawnRoom":
                 case "CrossRoads":
                     //If statements checking to see if connected room already exists eg. previous room
                     try
@@ -470,6 +471,7 @@ public class RoomSystem : MonoBehaviour
             //Add caps to each appropriate connecting room;
             switch (prevRoom.roomType)
             {
+                case "SpawnRoom":
                 case "CrossRoads":
                     try
                     {

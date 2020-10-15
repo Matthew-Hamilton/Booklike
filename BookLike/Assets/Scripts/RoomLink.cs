@@ -80,7 +80,7 @@ public class RoomLink : MonoBehaviour
         bool assignedType = false;
         while (!assignedType)
         {
-            int randValue = Random.Range(0, 14);
+            int randValue = Random.Range(0, folders.Count);
             if (folders[randValue] != disqualifiedRoom1 && folders[randValue] != disqualifiedRoom2 && folders[randValue] != disqualifiedRoom3
                 && folders[randValue] != disqualifiedRoom4 && folders[randValue] != disqualifiedRoom5 && folders[randValue] != disqualifiedRoom6
                 && folders[randValue] != disqualifiedRoom7 && folders[randValue] != disqualifiedRoom8 && folders[randValue] != disqualifiedRoom9 &&
