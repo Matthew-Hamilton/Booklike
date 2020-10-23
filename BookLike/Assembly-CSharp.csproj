@@ -60,6 +60,7 @@
     <Compile Include="Assets\Scripts\GetFiles.cs" />
     <Compile Include="Assets\Scripts\RoomSystem.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\RadialMenuController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
