@@ -10,8 +10,16 @@ public class Room : MonoBehaviour
     public GameObject floorTile;
     public GameObject dropDown;
 
+    List<Collider2D> wallColliders;
+
     public Color GroundColour;
     public Color Wall;
+    
+    string loadString;
+    string roomName;
+    tileType[,] roomLayout = new tileType[15,15];
+    public GameObject[,] layoutSprites = new GameObject[15, 15];
+    
     /*
     Ground = g
     Abys = a
@@ -26,21 +34,18 @@ public class Room : MonoBehaviour
         Chest = 3
     }
 
-    string loadString;
-    string roomName;
-    tileType[,] roomLayout = new tileType[15,15];
-    GameObject[,] layoutSprites = new GameObject[15, 15];
 
     private void Start()
     {
+
+        Sprite GroundSprite = Resources.Load<Sprite>("Tiles/Ground/0");
         for (int y = 0;y < 15; y++)
         {
             for (int x = 0; x < 15; x++)
             {
                 roomLayout[x, y] = tileType.Ground;
-                layoutSprites[x, y] = Instantiate(floorTile);
+                layoutSprites[x, y] = Instantiate(floorTile, this.gameObject.transform);
                 layoutSprites[x, y].transform.position = new Vector3(x * 1.28f  - (15 * 1.28f)/2 + 0.64f, y * 1.28f - (15 * 1.28f) / 2 + 0.64f);
-                Sprite GroundSprite = Resources.Load<Sprite>("Tiles/Ground/0");
                 layoutSprites[x, y].GetComponent<SpriteRenderer>().sprite = GroundSprite;
             }
         }
@@ -52,6 +57,11 @@ public class Room : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public GameObject[,] GetLayoutSprites()
+    {
+        return layoutSprites;
     }
 
     public void SetRoom(tileType[,] layout)
