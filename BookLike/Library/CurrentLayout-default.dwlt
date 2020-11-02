@@ -122,6 +122,7 @@ MonoBehaviour:
   m_MinSize: {x: 881, y: 342}
   m_MaxSize: {x: 16006, y: 8042}
   vertical: 0
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< Updated upstream
   controlID: 79
@@ -131,6 +132,9 @@ MonoBehaviour:
 =======
   controlID: 17
 >>>>>>> e881f78b0c3328cf166abd33ab1849c55330b9dd
+=======
+  controlID: 139
+>>>>>>> Stashed changes
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -155,6 +159,7 @@ MonoBehaviour:
   m_MinSize: {x: 605, y: 342}
   m_MaxSize: {x: 12005, y: 8042}
   vertical: 1
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< Updated upstream
   controlID: 80
@@ -164,6 +169,9 @@ MonoBehaviour:
 =======
   controlID: 72
 >>>>>>> e881f78b0c3328cf166abd33ab1849c55330b9dd
+=======
+  controlID: 96
+>>>>>>> Stashed changes
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -189,6 +197,7 @@ MonoBehaviour:
   m_MinSize: {x: 605, y: 221}
   m_MaxSize: {x: 12005, y: 4021}
   vertical: 0
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< Updated upstream
   controlID: 81
@@ -198,6 +207,9 @@ MonoBehaviour:
 =======
   controlID: 73
 >>>>>>> e881f78b0c3328cf166abd33ab1849c55330b9dd
+=======
+  controlID: 97
+>>>>>>> Stashed changes
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -447,6 +459,7 @@ MonoBehaviour:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       m_SelectedIDs: 3e3c0000
       m_LastClickedID: 15422
 <<<<<<< HEAD
@@ -459,6 +472,11 @@ MonoBehaviour:
 =======
       m_ExpandedIDs: 5afbffff363c00003e3c00005c3c0000743c0000
 >>>>>>> e881f78b0c3328cf166abd33ab1849c55330b9dd
+=======
+      m_SelectedIDs: 443c0000
+      m_LastClickedID: 15428
+      m_ExpandedIDs: 4afbffff
+>>>>>>> Stashed changes
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -650,6 +668,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 043d0000
     m_LastClickedID: 15620
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< Updated upstream
     m_ExpandedIDs: 00000000043d000000ca9a3b
@@ -659,6 +678,9 @@ MonoBehaviour:
 =======
     m_ExpandedIDs: 00000000043d0000
 >>>>>>> e881f78b0c3328cf166abd33ab1849c55330b9dd
+=======
+    m_ExpandedIDs: 000000000a3d0000
+>>>>>>> Stashed changes
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

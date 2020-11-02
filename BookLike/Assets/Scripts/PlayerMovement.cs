@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     Vector2 direction;
 <<<<<<< HEAD
     Vector3 positionChange;
@@ -15,6 +16,10 @@ public class PlayerMovement : MonoBehaviour
 >>>>>>> Stashed changes
 =======
 >>>>>>> e881f78b0c3328cf166abd33ab1849c55330b9dd
+=======
+    public Vector2 direction;
+    public Vector2 weapDirection;
+>>>>>>> Stashed changes
     [Range(0.2f, 20)]
     public float speed =1;
 
@@ -25,10 +30,13 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         getDirection();
 <<<<<<< HEAD
         positionChange = transform.position;
 =======
+=======
+>>>>>>> Stashed changes
         setDirection();
         transform.position += CheckMove() * speed * Time.deltaTime;
         /*
@@ -50,10 +58,13 @@ public class PlayerMovement : MonoBehaviour
         direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
     }
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< Updated upstream
     bool CheckMoveX()
 =======
+=======
+>>>>>>> Stashed changes
     void setWeapDirection()
     {
         weapDirection = new Vector2(Input.GetAxisRaw("AltHorizontal"), Input.GetAxisRaw("AltVertical")).normalized;
@@ -64,9 +75,12 @@ public class PlayerMovement : MonoBehaviour
         return weapDirection.normalized;
     }
 
+<<<<<<< Updated upstream
     Vector3 CheckMove()
 >>>>>>> Stashed changes
 =======
+=======
+>>>>>>> Stashed changes
     Vector3 CheckMove()
 >>>>>>> e881f78b0c3328cf166abd33ab1849c55330b9dd
     {
