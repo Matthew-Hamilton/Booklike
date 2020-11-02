@@ -33,6 +33,11 @@ public class RadialMenuController : MonoBehaviour
         
 }
 
+    public int GetSelected()
+    {
+        return selectedOption;
+    }
+
     // Update is called once per frame
     void Update()
     {
