@@ -7,11 +7,14 @@ public class PlayerMovement : MonoBehaviour
 
 <<<<<<< Updated upstream
     Vector2 direction;
+<<<<<<< HEAD
     Vector3 positionChange;
 =======
     public Vector2 direction;
     public Vector2 weapDirection;
 >>>>>>> Stashed changes
+=======
+>>>>>>> e881f78b0c3328cf166abd33ab1849c55330b9dd
     [Range(0.2f, 20)]
     public float speed =1;
 
@@ -23,19 +26,23 @@ public class PlayerMovement : MonoBehaviour
     {
 <<<<<<< Updated upstream
         getDirection();
+<<<<<<< HEAD
         positionChange = transform.position;
 =======
         setDirection();
         transform.position += CheckMove() * speed * Time.deltaTime;
         /*
 >>>>>>> Stashed changes
+=======
+        transform.position += CheckMove() * speed * Time.deltaTime;
+        /*
+>>>>>>> e881f78b0c3328cf166abd33ab1849c55330b9dd
         if (CheckMoveX())
             transform.position += new Vector3(direction.x, 0, 0) * speed * Time.deltaTime;
         if(CheckMoveY())
             transform.position += new Vector3(0, direction.y, 0) * speed * Time.deltaTime;
+            */
         //transform.position += new Vector3(direction.x, direction.y, 0) * speed * Time.deltaTime;
-        positionChange -= transform.position;
-        //Debug.Log("Set: " + positionChange);
     }
 
     void setDirection()
@@ -43,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
         direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
     }
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     bool CheckMoveX()
 =======
@@ -58,36 +66,14 @@ public class PlayerMovement : MonoBehaviour
 
     Vector3 CheckMove()
 >>>>>>> Stashed changes
+=======
+    Vector3 CheckMove()
+>>>>>>> e881f78b0c3328cf166abd33ab1849c55330b9dd
     {
         GameObject[,] layoutSprites = theRoom.GetLayoutSprites();
         Sprite GroundSprite = Resources.Load<Sprite>("Tiles/Floor");
-        foreach (GameObject tile in layoutSprites)
-        {
-            if(tile.GetComponent<SpriteRenderer>().sprite != GroundSprite)
-            {
-                if (transform.position.x + direction.x * speed * Time.deltaTime + 0.25 > tile.transform.position.x - 0.5f && transform.position.x + direction.x * speed * Time.deltaTime - 0.25 < tile.transform.position.x + 0.5f
-                    && transform.position.y + direction.y * speed * Time.deltaTime + 0.25 > tile.transform.position.y - 0.5f && transform.position.y + direction.y * speed * Time.deltaTime - 0.25 < tile.transform.position.y + 0.5f)
-                {
-                    if (transform.position.x + direction.x * speed * Time.deltaTime + 0.25 > tile.transform.position.x - 0.5f && transform.position.x + direction.x * speed * Time.deltaTime - 0.25 < tile.transform.position.x + 0.5f)
-                    {
-                        /* Attempts to allow it to move one way when blocked
-                        if (transform.position.x < tile.transform.position.x && direction.x > 0)
-                            transform.position = transform.position - new Vector3(transform.position.x, 0, 0) + new Vector3(tile.transform.position.x - 0.75f, 0, 0);
-                        if (transform.position.x > tile.transform.position.x && direction.x < 0)
-                            transform.position = transform.position - new Vector3(transform.position.x, 0, 0) + new Vector3(tile.transform.position.x + 0.75f, 0, 0);
-                            */
-                        Debug.Log("Cannot Go Left/Right");
-                        return false;
-                    }
-                }
-            }
-        }
-        return true;
-    }
-    bool CheckMoveY()
-    {
-        GameObject[,] layoutSprites = theRoom.GetLayoutSprites();
-        Sprite GroundSprite = Resources.Load<Sprite>("Tiles/Floor");
+        Vector3 RefinedMove = direction;
+
         foreach (GameObject tile in layoutSprites)
         {
             if (tile.GetComponent<SpriteRenderer>().sprite != GroundSprite)
@@ -95,14 +81,30 @@ public class PlayerMovement : MonoBehaviour
                 if (transform.position.x + direction.x * speed * Time.deltaTime + 0.25 > tile.transform.position.x - 0.5f && transform.position.x + direction.x * speed * Time.deltaTime - 0.25 < tile.transform.position.x + 0.5f
                     && transform.position.y + direction.y * speed * Time.deltaTime + 0.25 > tile.transform.position.y - 0.5f && transform.position.y + direction.y * speed * Time.deltaTime - 0.25 < tile.transform.position.y + 0.5f)
                 {
-                    if (transform.position.y + direction.y * speed * Time.deltaTime + 0.25 > tile.transform.position.y - 0.5f && transform.position.y + direction.y * speed * Time.deltaTime - 0.25 < tile.transform.position.y + 0.5f)
+                    if (transform.position.x + direction.x * speed * Time.deltaTime + 0.25 > tile.transform.position.x - 0.5f && transform.position.x + direction.x * speed * Time.deltaTime - 0.25 < tile.transform.position.x + 0.5f
+                    && transform.position.y+ 0.25 > tile.transform.position.y - 0.5f && transform.position.y- 0.25 < tile.transform.position.y + 0.5f)
                     {
-                        Debug.Log("Cannot Go Up/Down");
-                        return false;
+                        RefinedMove.x = 0;
                     }
+                    if (transform.position.x + 0.25 > tile.transform.position.x - 0.5f && transform.position.x - 0.25 < tile.transform.position.x + 0.5f
+                    && transform.position.y + direction.y * speed * Time.deltaTime + 0.25 > tile.transform.position.y - 0.5f && transform.position.y + direction.y * speed * Time.deltaTime - 0.25 < tile.transform.position.y + 0.5f)
+                    {
+                        RefinedMove.y = 0;
+                    }
+                    /*if (direction.x > 0 && transform.position.x + direction.x * speed * Time.deltaTime + 0.25 > tile.transform.position.x - 0.5f)
+                        RefinedMove.x = 0;
+                    if (direction.x < 0 && transform.position.x + direction.x * speed * Time.deltaTime - 0.25 < tile.transform.position.x + 0.5f)
+                        RefinedMove.x = 0;
+                    if (direction.y > 0 && transform.position.y + direction.y * speed * Time.deltaTime + 0.25 > tile.transform.position.y - 0.5f)
+                        RefinedMove.y = 0;
+                    if (direction.y < 0 && transform.position.y + direction.y * speed * Time.deltaTime - 0.25 < tile.transform.position.y + 0.5f)
+                        RefinedMove.y = 0;*/
                 }
             }
         }
-        return true;
+        return RefinedMove;
+        
     }
+
+    
 }
