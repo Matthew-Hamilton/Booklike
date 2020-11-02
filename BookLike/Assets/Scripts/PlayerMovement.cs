@@ -5,8 +5,13 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
+<<<<<<< Updated upstream
     Vector2 direction;
     Vector3 positionChange;
+=======
+    public Vector2 direction;
+    public Vector2 weapDirection;
+>>>>>>> Stashed changes
     [Range(0.2f, 20)]
     public float speed =1;
 
@@ -16,8 +21,14 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+<<<<<<< Updated upstream
         getDirection();
         positionChange = transform.position;
+=======
+        setDirection();
+        transform.position += CheckMove() * speed * Time.deltaTime;
+        /*
+>>>>>>> Stashed changes
         if (CheckMoveX())
             transform.position += new Vector3(direction.x, 0, 0) * speed * Time.deltaTime;
         if(CheckMoveY())
@@ -27,12 +38,26 @@ public class PlayerMovement : MonoBehaviour
         //Debug.Log("Set: " + positionChange);
     }
 
-    void getDirection()
+    void setDirection()
     {
         direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
     }
 
+<<<<<<< Updated upstream
     bool CheckMoveX()
+=======
+    void setWeapDirection()
+    {
+        weapDirection = new Vector2(Input.GetAxisRaw("AltHorizontal"), Input.GetAxisRaw("AltVertical")).normalized;
+    }
+
+    public Vector2 GetWeaponDirection()
+    {
+        return weapDirection.normalized;
+    }
+
+    Vector3 CheckMove()
+>>>>>>> Stashed changes
     {
         GameObject[,] layoutSprites = theRoom.GetLayoutSprites();
         Sprite GroundSprite = Resources.Load<Sprite>("Tiles/Floor");
