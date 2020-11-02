@@ -4,22 +4,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    Vector2 direction;
-<<<<<<< HEAD
-    Vector3 positionChange;
-=======
+    
     public Vector2 direction;
     public Vector2 weapDirection;
->>>>>>> Stashed changes
-=======
->>>>>>> e881f78b0c3328cf166abd33ab1849c55330b9dd
-=======
-    public Vector2 direction;
-    public Vector2 weapDirection;
->>>>>>> Stashed changes
     [Range(0.2f, 20)]
     public float speed =1;
 
@@ -29,28 +16,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-        getDirection();
-<<<<<<< HEAD
-        positionChange = transform.position;
-=======
-=======
->>>>>>> Stashed changes
         setDirection();
         transform.position += CheckMove() * speed * Time.deltaTime;
-        /*
->>>>>>> Stashed changes
-=======
-        transform.position += CheckMove() * speed * Time.deltaTime;
-        /*
->>>>>>> e881f78b0c3328cf166abd33ab1849c55330b9dd
-        if (CheckMoveX())
-            transform.position += new Vector3(direction.x, 0, 0) * speed * Time.deltaTime;
-        if(CheckMoveY())
-            transform.position += new Vector3(0, direction.y, 0) * speed * Time.deltaTime;
-            */
-        //transform.position += new Vector3(direction.x, direction.y, 0) * speed * Time.deltaTime;
     }
 
     void setDirection()
@@ -58,13 +25,6 @@ public class PlayerMovement : MonoBehaviour
         direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
     }
 
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-    bool CheckMoveX()
-=======
-=======
->>>>>>> Stashed changes
     void setWeapDirection()
     {
         weapDirection = new Vector2(Input.GetAxisRaw("AltHorizontal"), Input.GetAxisRaw("AltVertical")).normalized;
@@ -75,14 +35,7 @@ public class PlayerMovement : MonoBehaviour
         return weapDirection.normalized;
     }
 
-<<<<<<< Updated upstream
     Vector3 CheckMove()
->>>>>>> Stashed changes
-=======
-=======
->>>>>>> Stashed changes
-    Vector3 CheckMove()
->>>>>>> e881f78b0c3328cf166abd33ab1849c55330b9dd
     {
         GameObject[,] layoutSprites = theRoom.GetLayoutSprites();
         Sprite GroundSprite = Resources.Load<Sprite>("Tiles/Floor");
