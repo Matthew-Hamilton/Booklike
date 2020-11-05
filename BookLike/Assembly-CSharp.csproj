@@ -56,13 +56,14 @@
     <Compile Include="Assets\Scripts\CameraControl.cs" />
     <Compile Include="Assets\Scripts\RoomLink.cs" />
     <Compile Include="Assets\Scripts\GetFolders.cs" />
+    <Compile Include="Assets\Scripts\ProjectileMovement.cs" />
     <Compile Include="Assets\Scripts\RadialMenuController.cs" />
+    <Compile Include="Assets\Scripts\WeaponManager.cs" />
     <Compile Include="Assets\Scripts\Manipulation.cs" />
     <Compile Include="Assets\Scripts\GetFiles.cs" />
     <Compile Include="Assets\Scripts\RoomSystem.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
-    <Compile Include="Assets\Scripts\ProjectileMovement.cs" />
-    <Compile Include="Assets\Scripts\WeaponManager.cs" />
+    <Compile Include="Assets\Scripts\GameCam.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
