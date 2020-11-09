@@ -77,19 +77,19 @@ public class Room : MonoBehaviour
                     case tileType.Ground:
                         layoutSprites[x, y].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Tiles/Floor");
                         layoutSprites[x, y].GetComponent<SpriteRenderer>().color = GroundColour;
-                        layoutSprites[x, y].GetComponent<Rigidbody2D>().simulated = false;
+                        layoutSprites[x, y].tag = "Ground";
 
                         break;
                     case tileType.Abys:
                         layoutSprites[x, y].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Tiles/Void/main");
 
-                        layoutSprites[x, y].GetComponent<Rigidbody2D>().simulated = true;
+                        layoutSprites[x, y].tag = "Abys";
                         break;
                     case tileType.Wall:
                         layoutSprites[x, y].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Tiles/Tile");
                         layoutSprites[x, y].GetComponent<SpriteRenderer>().color = Wall;
 
-                        layoutSprites[x, y].GetComponent<Rigidbody2D>().simulated = true;
+                        layoutSprites[x, y].tag = "Wall";
                         break;
                     default:
                         layoutSprites[x, y].GetComponent<SpriteRenderer>().sprite = null;

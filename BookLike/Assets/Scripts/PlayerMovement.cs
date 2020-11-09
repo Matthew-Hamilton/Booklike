@@ -8,18 +8,20 @@ public class PlayerMovement : MonoBehaviour
     Vector2 direction;
     Vector2 weapDirection;
     float shootCoolDown;
-    public float shootDelay = 0.5f;
+    public float shootDelay = 0.2f;
     [Range(0.2f, 20)]
     public float speed =1;
 
     public WeaponManager weaponManager;
     public Room theRoom;
+    public GameCam theCamera;
     // Start is called before the first frame update
 
 
     private void Start()
     {
         shootCoolDown = shootDelay;
+        weapDirection = new Vector2(1, 0);
     }
     // Update is called once per frame
     void Update()
@@ -27,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
         setDirection();
         setWeapDirection();
         transform.position += CheckMove() * speed * Time.deltaTime;
+        theCamera.beUpdated();
 
         if (Mathf.Round(Input.GetAxisRaw("Fire1")) > 0 && shootCoolDown <= 0)
         {
@@ -52,7 +55,11 @@ public class PlayerMovement : MonoBehaviour
 
     void setWeapDirection()
     {
-        weapDirection = new Vector2(Input.GetAxisRaw("AltHorizontal"), Input.GetAxisRaw("AltVertical")).normalized;
+        Vector2 testDir = new Vector2(Input.GetAxisRaw("AltHorizontal"), Input.GetAxisRaw("AltVertical")).normalized;
+        if (testDir.magnitude > 0.35)
+        {
+            weapDirection = testDir;
+        }
     }
 
     public Vector2 GetWeaponDirection()
@@ -61,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
     }
     public Vector2 GetVelocity()
     {
-        return direction;
+        return direction * speed;
     }
 
     Vector3 CheckMove()
